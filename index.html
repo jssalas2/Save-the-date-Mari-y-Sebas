@@ -47,10 +47,15 @@
 </head>
 <body>
   <div class="video-container">
-    <video controls autoplay muted playsinline>
+    <video controls autoplay playsinline id="myVideo">
       <source src="Save the Dtae.mp4" type="video/mp4">
       Tu navegador no soporta video.
     </video>
   </div>
+
+  <script>
+    var video = document.getElementById('myVideo');
+    video.volume = 1.0;
+  </script>
 </body>
 </html>
