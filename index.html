@@ -56,6 +56,18 @@
   <script>
     var video = document.getElementById('myVideo');
     video.volume = 1.0;
+    video.muted = false;
+    var playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(function() {
+          console.log('Video reproduciendo automáticamente');
+        })
+        .catch(function(error) {
+          video.muted = true;
+          video.play();
+        });
+    }
   </script>
 </body>
 </html>
